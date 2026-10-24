@@ -16,4 +16,24 @@ $(function () {
         $("#msg").text("Enter edges as: u v weight.");
         return false;
       }
+       var u = Number(edge[0]);
+      var v = Number(edge[1]);
+      var w = Number(edge[2]);
+
+      if (
+        !Number.isInteger(u) ||
+        !Number.isInteger(v) ||
+        u < 0 || v < 0 ||
+        u >= n || v >= n ||
+        u === v || !Number.isFinite(w) || w <= 0
+      ) {
+        $("#msg").text("Invalid edge on line " + (i + 1) + ".");
+        return false;
+      }
+    }
+
+    $("#msg").text("Graph input is valid.").addClass("ok");
+    return true;
+  }
+
 });
