@@ -1,5 +1,5 @@
 $(function () {
-
+//Pranav added this
   function validateGraph() {
     var n = Number($("#n").val());
     var lines = $("#edges").val().trim().split("\n");
