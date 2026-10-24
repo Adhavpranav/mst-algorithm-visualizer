@@ -31,6 +31,7 @@ $(function () {
         return false;
       }
     }
+    //checked by sid
 
     $("#msg").text("Graph input is valid.").addClass("ok");
     return true;
