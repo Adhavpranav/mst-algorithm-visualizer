@@ -35,5 +35,29 @@ $(function () {
     $("#msg").text("Graph input is valid.").addClass("ok");
     return true;
   }
+  //Mayur's changes
+   $("#draw").click(function () {
+    $("#msg").removeClass("ok");
+    validateGraph();
+  });
+
+  $("#sample").click(function () {
+    $("#n").val(6);
+    $("#edges").val(
+      "0 1 4\n0 2 3\n1 2 1\n1 3 2\n" +
+      "2 3 4\n3 4 2\n4 5 6\n3 5 7"
+    );
+
+    $("#msg").removeClass("ok");
+    validateGraph();
+  });
+
+  $("#run").click(function () {
+    $("#msg").removeClass("ok");
+
+    if (validateGraph()) {
+      $("#msg").text("Input accepted. Algorithms will be implemented next.");
+    }
+  });
 
 });
