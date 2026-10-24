@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MST Visualizer | Prim's & Kruskal's</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Minimum Spanning Tree Visualizer</h1>
+  <p>Visualize Prim's and Kruskal's algorithms on an undirected weighted graph.</p>
+</header>
+
+<main>
+
+  <!-- Graph Input -->
+  <section class="panel" id="inputs">
+    <h2>Graph Input</h2>
+
+    <label for="n">Number of vertices (1–12)</label>
+    <input id="n" type="number" min="1" max="12" value="6">
+
+    <label for="edges">
+      Enter edges (u v weight), one per line
+    </label>
+
+    <textarea id="edges" rows="8" spellcheck="false">0 1 4
+0 2 3
+1 2 1
+1 3 2
+2 3 4
+3 4 2
+4 5 6
+3 5 7</textarea>
+
+    <div class="row">
+      <button id="draw" class="ghost">Draw Graph</button>
+      <button id="sample" class="ghost">Load Sample</button>
+      <button id="run">Run Algorithms</button>
+    </div>
+
+    <p id="msg" role="alert"></p>
+  </section>
+
+  <section class="panel" id="timing" hidden>
+    <h2>Algorithm Results</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Algorithm</th>
+          <th>MST Total Cost</th>
+          <th>Execution Time</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Prim's Algorithm</td>
+          <td id="pc"></td>
+          <td id="pt"></td>
+        </tr>
+
+        <tr>
+          <td>Kruskal's Algorithm</td>
+          <td id="kc"></td>
+          <td id="kt"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="note">
+      Execution time is the average time per run.
+    </p>
+  </section>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
