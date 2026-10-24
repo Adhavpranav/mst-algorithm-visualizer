@@ -196,3 +196,60 @@ th {
   color: #334155;
   font-weight: 700;
 }
+
+tbody tr:hover {
+  background: #f8faff;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.note {
+  color: var(--mute);
+  font-size: 0.88rem;
+  margin: 12px 0 0;
+}
+
+@media (max-width: 760px) {
+  header,
+  main {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  header {
+    padding-top: 24px;
+  }
+
+  .panel {
+    padding: 17px;
+    border-radius: 12px;
+  }
+
+  input {
+    max-width: 100%;
+  }
+
+  .row {
+    gap: 9px;
+  }
+
+  button {
+    padding: 10px 14px;
+  }
+
+  th,
+  td {
+    padding: 9px 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
