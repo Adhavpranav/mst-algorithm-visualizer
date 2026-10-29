@@ -1,8 +1,12 @@
+
 $(function () {
-//Pranav added this
+  // Pranav added this
   function validateGraph() {
     var n = Number($("#n").val());
-    var lines = $("#edges").val().trim().split("\n");
+    var edgeText = $("#edges").val().trim();
+    var lines = edgeText === "" ? [] : edgeText.split(/\n/);
+
+    $("#msg").removeClass("ok");
 
     if (!Number.isInteger(n) || n < 1 || n > 12) {
       $("#msg").text("Enter vertices between 1 and 12.");
@@ -16,7 +20,8 @@ $(function () {
         $("#msg").text("Enter edges as: u v weight.");
         return false;
       }
-       var u = Number(edge[0]);
+
+      var u = Number(edge[0]);
       var v = Number(edge[1]);
       var w = Number(edge[2]);
 
@@ -31,14 +36,13 @@ $(function () {
         return false;
       }
     }
-    //checked by sid
 
     $("#msg").text("Graph input is valid.").addClass("ok");
     return true;
   }
-  //Mayur's changes
-   $("#draw").click(function () {
-    $("#msg").removeClass("ok");
+
+  // Mayur's changes
+  $("#draw").click(function () {
     validateGraph();
   });
 
@@ -49,16 +53,13 @@ $(function () {
       "2 3 4\n3 4 2\n4 5 6\n3 5 7"
     );
 
-    $("#msg").removeClass("ok");
     validateGraph();
   });
 
   $("#run").click(function () {
-    $("#msg").removeClass("ok");
-
     if (validateGraph()) {
-      $("#msg").text("Input accepted. Algorithms will be implemented next.");
+      $("#msg").text("Input accepted. Algorithms will be implemented next.")
+        .addClass("ok");
     }
   });
-
 });
